@@ -6,13 +6,13 @@ from Crypto.Util.Padding import pad, unpad
 import base64
 import hashlib
 
-@app.route('https://axsolot18-github-io-2.onrender.com/')
-def home():
-    return "Server işləyir!"
 app = Flask(__name__)
 CORS(app)
 app.config["MONGO_URI"] = "postgresql://kriptoqrafiya_user:WTbI7tORuLDFXccOgg8nUhJojuglMvqK@dpg-d3ntjf0dl3ps739c3dh0-a/kriptoqrafiya"  # Doğru URI. 'history' collection adı, veritabanı değil!
 mongo = PyMongo(app)
+@app.route('https://axsolot18-github-io-2.onrender.com/')
+def home():
+    return "Server işləyir!"
 
 # Şifrəni hash-lə (sadə demo üçün)
 def hash_password(password):
