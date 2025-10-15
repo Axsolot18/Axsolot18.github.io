@@ -6,9 +6,12 @@ from Crypto.Util.Padding import pad, unpad
 import base64
 import hashlib
 
+@app.route('https://axsolot18-github-io-2.onrender.com/')
+def home():
+    return "Server işləyir!"
 app = Flask(__name__)
 CORS(app)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/cryptoapp"  # Doğru URI. 'history' collection adı, veritabanı değil!
+app.config["MONGO_URI"] = "postgresql://kriptoqrafiya_user:WTbI7tORuLDFXccOgg8nUhJojuglMvqK@dpg-d3ntjf0dl3ps739c3dh0-a/kriptoqrafiya"  # Doğru URI. 'history' collection adı, veritabanı değil!
 mongo = PyMongo(app)
 
 # Şifrəni hash-lə (sadə demo üçün)
@@ -120,4 +123,4 @@ def get_history():
     return jsonify({'history': items})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5432, debug=True)
