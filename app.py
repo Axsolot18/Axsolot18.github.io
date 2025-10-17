@@ -9,7 +9,7 @@ import hashlib
 
 app = Flask(__name__)
 CORS(app)
-app.config["MONGO_URI"] = "postgresql://kriptoqrafiya_user:WTbI7tORuLDFXccOgg8nUhJojuglMvqK@dpg-d3ntjf0dl3ps739c3dh0-a/kriptoqrafiya"  # Doğru URI. 'history' collection adı, veritabanı değil!
+app.config["MONGO_URI"] = "mongodb+srv://elnurliyev1619_db_user:<db_password>@cluster0.9x6zd9g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"  # Doğru URI. 'history' collection adı, veritabanı değil!
 mongo = PyMongo(app)
 @app.route('https://axsolot18-github-io-2.onrender.com/')
 def home():
